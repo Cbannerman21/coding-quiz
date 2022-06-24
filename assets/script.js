@@ -186,6 +186,13 @@ const questions = [
             { text: 'A user generated behaviour', correct: true}, 
             { text: 'A button or selector', correct: false}, 
             { text: 'A Circus', correct: false}, 
-        ] 
-    }  
-] 
+        ], 
+    },  
+];
+
+submitButton.onclick = function() {
+    const initials = initialsInput.value;
+    const score = remainingTime.value;
+
+    localStorage.setItem(initials, score);
+};
