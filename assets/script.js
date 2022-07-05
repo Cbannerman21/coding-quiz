@@ -6,7 +6,8 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons'); 
 const resultEl = document.getElementById('result');
 const formEl = document.getElementById('highscore'); 
-const timer = document.getElementById('timer'); 
+const timer = document.getElementById('timer');
+const submitButton = document.getElementById('submit-btn'); 
 
 let timeSecond = 60; 
 let countingDown = true; 
@@ -173,10 +174,10 @@ const questions = [
     { 
         question: 'What does API stand for?', 
         answers: [ 
-            { text: 'Web Programming Interface', correct: true }, 
-            { text: 'Web Protocol Inquiry', correct: false}, 
-            { text: 'Web Prerequisite Information', correct: false}, 
-            { text: 'Wash Produce Immediately', correct: false}, 
+            { text: 'Application Programming Interface', correct: true }, 
+            { text: 'Analytics Protocol Inquiry', correct: false}, 
+            { text: 'Admin Prerequisite Information', correct: false}, 
+            { text: 'Answer Peters Inquiry', correct: false}, 
         ] 
     }, 
     { 
@@ -190,9 +191,13 @@ const questions = [
     },  
 ];
 
-submitButton.onclick = function() {
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
     const initials = initialsInput.value;
     const score = remainingTime.value;
+    console.log(initials, score);
+
 
     localStorage.setItem(initials, score);
-};
+    } 
+);
