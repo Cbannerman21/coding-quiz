@@ -193,9 +193,9 @@ const questions = [
 
 submitButton.addEventListener('click', function(event) {
     event.preventDefault();
-    const initials = initialsInput.value;
+    const initials = initialsInput.value 
     const score = remainingTime.value;
-    console.log(initials, score);
+    // console.log(initials, score);
 
 
     localStorage.setItem(initials, score);
